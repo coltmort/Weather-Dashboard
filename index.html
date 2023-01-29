@@ -9,14 +9,14 @@
     <title>Weather Stuffs</title>
 </head>
 <body>
-    <header>
-        <p>Weather</p>
+    <header class="flex h-10 from-orange-500 to-sky-700 bg-gradient-to-r justify-center mb-4">
+        <p class="w-fit text-white self-center text-xl">Weather</p>
     </header>
-    <main class="flex flex-row">
+    <main class="flex flex-row gap-8 mx-10">
         <aside class="basis-1/5">
             <h3 class="text-lg">Search for a city:</h3>
-            <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search"/>
-            <button>Search</button>
+            <input class="searched-location placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search"/>
+            <button class="location-search-button">Search</button>
             <hr>
             <div class="history-container">
 
@@ -24,9 +24,11 @@
         </aside>
         <section class="bg-red basis-full">
             <div class="current-container">
-                <p class="w-full">hello</p>
+                
             </div>
-            <div class="current-forecast"></div>
+            <div class="current-forecast">
+                <h3>5-Day Forecast:</h3>
+            </div>
         </section>
     </main>
     
