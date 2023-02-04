@@ -18,6 +18,8 @@ searchedLocationInput.addEventListener('keydown', (event) => {
     }
 })
 
+retrieveCachedSearchHistory()
+
 function onError(a){
     searchedLocationInput.setCustomValidity(`Invalid city name:
 Please try again.`)
@@ -28,6 +30,16 @@ function updateSearchHistory(search){
     let newArray = searchHistory.find(element => element === search)
     if(!newArray){
     searchHistory.unshift(search)}
+}
+
+function cacheSearchHistory(){
+    localStorage.setItem('search-history', JSON.stringify(searchHistory))
+}
+
+function retrieveCachedSearchHistory(){
+    if(localStorage.getItem('search-history'))
+    searchHistory = JSON.parse(localStorage.getItem('search-history'))
+    writeSearchHistory()
 }
 
 function checkResponseStatus(response){
@@ -71,16 +83,19 @@ function showWeather(data) {
     writeWeatherData(data, 28, forcastContainer)
     writeWeatherData(data, 36, forcastContainer)
     writeSearchHistory()
+    cacheSearchHistory()
 }
 
 function writeWeatherData(data, hour, DOMlocation){
-    let wrapper = document.createElement('div', 'border', 'border-gray-100')
+    let wrapper = document.createElement('div')
+    wrapper.classList.add('border-2', 'border-gray-800', 'rounded-md', 'bg-slate-300', 'p-4')
     DOMlocation.appendChild(wrapper)
     let weatherIcon = document.createElement('img')
     weatherIcon.setAttribute('src', iconURL(data.list[0].weather[0].icon))
     wrapper.appendChild(weatherIcon)
     let currentTime = document.createElement('span')
     currentTime.textContent = dayjs.unix(data.list[hour].dt).format('MMM D, YYYY hh:mm a')
+    currentTime.classList.add('text-lg', 'font-bold')
     wrapper.appendChild(currentTime)
     let currentTemp = document.createElement('p')
     currentTemp.textContent = `Temp: ${data.list[hour].main.temp}\u00B0F`
