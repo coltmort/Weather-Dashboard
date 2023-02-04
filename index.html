@@ -14,24 +14,32 @@
     </header>
     <main class="flex flex-row gap-8 mx-10">
         <aside class="basis-1/5">
-            <h3 class="text-lg">Search for a city:</h3>
-            <input class="searched-location placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search"/>
-            <button class="location-search-button">Search</button>
+            <label for="location-search" class="text-lg my-2">Search for a city:</label>
+            <input id="location-search" class="invalid:border-red-300 my-2 searched-location placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search"/>
+            <button class="location-search-button rounded-md px-2 py-1 my-2 border-2 hover:bg-slate-100 active:bg-orange-200">Search</button>
             <hr>
-            <div class="history-container">
+            <div class="history-container flex flex-col p-3 gap-3">
 
             </div>
         </aside>
         <section class="bg-red basis-full">
-            <div class="current-container">
-                
+            <div class="current-container border-b-2">
+
             </div>
-            <div class="current-forecast">
+            <div class="current-forcast">
                 <h3>5-Day Forecast:</h3>
+                <div class="forcast-wrapper flex gap-8">
+
+                </div>
             </div>
         </section>
     </main>
-    
+
     <script src="./assets/js/script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
 </body>
 </html>
