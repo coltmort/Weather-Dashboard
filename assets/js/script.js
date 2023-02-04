@@ -18,6 +18,8 @@ searchedLocationInput.addEventListener('keydown', (event) => {
     }
 })
 
+// content to git add
+
 retrieveCachedSearchHistory()
 
 function onError(a){
