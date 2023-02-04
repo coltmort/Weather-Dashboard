@@ -1,7 +1,7 @@
 let searchedLocation = ''
-let iconURL = (icon) =>`http://openweathermap.org/img/wn/${icon}.png`
-let geoApiUrl = () => `http://api.openweathermap.org/geo/1.0/direct?q=${searchedLocation}&limit=1&appid=3bec968599042a39e37664de4f3463aa`
-let weatherApiUrl = () => `http://api.openweathermap.org/data/2.5/forecast?${coordinates}&units=imperial&appid=3bec968599042a39e37664de4f3463aa`
+let iconURL = (icon) =>`https://openweathermap.org/img/wn/${icon}.png`
+let geoApiUrl = () => `https://api.openweathermap.org/geo/1.0/direct?q=${searchedLocation}&limit=1&appid=3bec968599042a39e37664de4f3463aa`
+let weatherApiUrl = () => `https://api.openweathermap.org/data/2.5/forecast?${coordinates}&units=imperial&appid=3bec968599042a39e37664de4f3463aa`
 let searchedLocationInput = document.querySelector('.searched-location')
 let locationSearchButton = document.querySelector('.location-search-button')
 let coordinates = ''
